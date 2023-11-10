@@ -18,6 +18,7 @@ import {
   ModalCloseButton,
   useDisclosure,
   Center,
+  Alert
 } from "@chakra-ui/react";
 import axios from "axios";
 import Navbar from "./navbar";
@@ -240,14 +241,15 @@ const TestLink = () => {
         </Select> */}
         {shouldShow ? (
           <VStack spacing={4}>
-            <Text
+                    <Alert
               fontSize="2xl"
               fontWeight="bold"
               color="white"
               textAlign="center"
+              background="green"
             >
              Test Link: {window.location.origin}/testpage/{lang_id}
-            </Text>
+            </Alert>
             <form>
               {questions.map((question, ind) => (
                 <Box
