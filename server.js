@@ -24,6 +24,7 @@ app.use(cors());
 
 app.use("/api/user", userRoutes);
 app.use("/api/quiz", quizRoutes);
+app.use("/testpage/api/quiz", quizRoutes);
 app.use("/api/performance", performanceRoutes);
 
 const port = process.env.PORT || 5000;

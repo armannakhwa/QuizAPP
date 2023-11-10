@@ -41,6 +41,7 @@ const TestLink = () => {
   const [responseDetails, setResponseDetails] = useState({});
   const [shouldShow, setShouldShow] = useState(false);
   const [selectedAnswers, setSelectedAnswers] = useState({});
+  const currentURL=window.location.origin+'/testpage/';
   let { id } = useParams(); 
   console.log(id)
 
@@ -241,7 +242,10 @@ const TestLink = () => {
         </Select> */}
         {shouldShow ? (
           <VStack spacing={4}>
-                    <Alert
+            <a
+                    href={currentURL+lang_id}
+                    >
+                    <Text
               fontSize="2xl"
               fontWeight="bold"
               color="white"
@@ -249,7 +253,8 @@ const TestLink = () => {
               background="green"
             >
              Test Link: {window.location.origin}/testpage/{lang_id}
-            </Alert>
+            </Text>
+            </a>
             <form>
               {questions.map((question, ind) => (
                 <Box
